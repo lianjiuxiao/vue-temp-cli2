@@ -14,3 +14,4 @@ BuildProcess.md*
 *.sln
 /node_modules.zip
 /node_modules
+/BuildProcess.md
