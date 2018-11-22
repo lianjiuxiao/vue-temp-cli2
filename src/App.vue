@@ -14,6 +14,12 @@
       this.appReady(function () {
         console.log(`appReady方法调用成功`)
       })
+      this.$mock({url: "/city", options: {method: 'get'}}).then(res => {
+
+      })
+      this.$axios({url: "/login", params: {username: 'lisanxing', userpwd: '123456'}}).then(res => {
+
+      })
     },
   }
 </script>

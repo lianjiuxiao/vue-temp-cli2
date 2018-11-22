@@ -2,16 +2,57 @@
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
 
-const path = require('path')
+const path = require('path');
+const domains = {
+
+  production: (() => {
+    // return  'http://192.168.4.52:9127',
+    return  'http://hb.chelenet.com'
+  })(),
+  test: (() => {
+    return 'http://192.168.4.52:9127' // 北京52服务器地址
+  })(),
+  local: (() => {
+    return 'http://192.168.4.52:9127' // 北京52服务器地址
+  })(),
+  mock: 'https://www.easy-mock.com/mock/5bf50d687392ed1f6bff6f1b/mock-vue'// easyMock 网站提供的模拟地址,
+}
+
+const defaultDomainUsed = ((str) => {
+  switch (str) {
+    case 'production':
+      return domains.production;
+    case 'test':
+      return domains.test;
+    case 'local':
+      return domains.local;
+    case 'mock':
+      return domains.mock;
+  }
+})();
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
-
+    proxyTable: {
+      '/api': {
+        target: domains.production,  //目标接口域名
+        changeOrigin: true,  //是否跨域
+        pathRewrite: {
+          '^/api': ''   //重写接口
+        }
+      },
+      '/mock': {
+        target: domains.mock,  //目标接口域名
+        changeOrigin: true,  //是否跨域
+        secure: false,
+        pathRewrite: {
+          '^/mock': ''
+        }
+      },
+    },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
@@ -50,7 +91,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/vue-temp-v2/dist/',
 
     /**
      * Source Maps
