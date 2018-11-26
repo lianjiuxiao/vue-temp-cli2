@@ -14,11 +14,26 @@
       this.appReady(function () {
         console.log(`appReady方法调用成功`)
       })
-      this.$mock({url: "/city", options: {method: 'get'}}).then(res => {
-
+      this.$mock({
+        url: "/city",
+        method: 'get',
+        headers: {token2: "123456"}
+      }).then(res => {
       })
-      this.$axios({url: "/login", params: {username: 'lisanxing', userpwd: '123456'}}).then(res => {
+      this.$axios({
+        url: "/login",
+        params: {username: 'lisanxing', userpwd: '123456'},
+        method: 'get',
+        headers: {token2: "45678"},
+        auth: {token2: "123456"}
+      }).then(res => {
+      })
 
+      this.$cross({
+        url: "https://www.easy-mock.com/mock/5bf50d687392ed1f6bff6f1b/mock-vue/city",
+        method: 'get',
+        headers: {token2: "123456"}
+      }).then(res => {
       })
     },
   }

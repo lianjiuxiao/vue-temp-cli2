@@ -1,6 +1,6 @@
 import {mapGetters, mapMutations, mapActions} from 'vuex'
 import {merge, hasValue} from './utils'
-import {$axios, $mock} from '../http/axios'
+import {$axios, $mock, $cross} from '../plugins/axios'
 
 export default {
   install(Vue, options) {
@@ -87,5 +87,6 @@ export default {
     }
     Vue.prototype.$axios = $axios
     Vue.prototype.$mock = $mock
+    Vue.prototype.$cross = $cross
   }
 }

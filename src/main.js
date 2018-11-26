@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store/store'
-import plugins from './mixins/plugins'
+import plugins from './mixins/index'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 Vue.use(plugins)
