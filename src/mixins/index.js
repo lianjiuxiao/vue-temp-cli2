@@ -46,14 +46,19 @@ export default {
       },
       update() {
       },
-      beforeRouteUpdate() {
-      },
       methods: {
         hasValue(val) {
           return hasValue(val)
         },
         merge(obj, option) {
           return merge(obj, option)
+        },
+        go({path, query}) {
+          console.log(path);
+          this.$router.push({
+            path: path,
+            query: query
+          })
         },
         appReady(cb) {
           this.setUser({
