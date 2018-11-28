@@ -1,9 +1,9 @@
 <template>
   <div class="page">
     <div>
-      <router-link to="/ui/element">element</router-link>
-      <router-link to="/ui/iview">iview</router-link>
-      <router-link to="/ui/vuetify">vuetify</router-link>
+      <router-link to="/ui/element"> <h3>element</h3></router-link>
+      <router-link to="/ui/iview"><h3>iview</h3></router-link>
+      <router-link to="/ui/vuetify"><h3>vuetify</h3></router-link>
     </div>
     <div>
       <router-view/>
