@@ -1,6 +1,6 @@
 import {mapGetters, mapMutations, mapActions} from 'vuex'
 import {merge, hasValue} from './utils'
-import {$axios, $mock, $cross} from '../plugins/axios'
+import {$axios, $mock, $cross} from '@/network/base/axios'
 
 export default {
   install(Vue, options) {

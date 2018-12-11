@@ -1,6 +1,6 @@
 import Vuex from 'vuex'
 import VuexPersistence from 'vuex-persist'
-import {merge} from '@/mixins/utils'
+import {merge} from '@/common/mixins/utils'
 import Vue from 'vue'
 Vue.use(Vuex)
 const user = {

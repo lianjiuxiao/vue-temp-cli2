@@ -2,9 +2,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
-import store from './store/store'
-import plugins from './mixins/index'
+import router from '@/router'
+import store from '@/store/store'
+import plugins from '@/common/mixins/index'
 import {Button, Select, Row} from 'element-ui';
 import iView from 'iview';
 import zh from 'iview/dist/locale/zh-CN';
