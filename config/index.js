@@ -7,7 +7,7 @@ const domains = {
 
   production: (() => {
     // return  'http://192.168.4.52:9127',
-    return  'http://hb.chelenet.com'
+    return 'http://hb.chelenet.com'
   })(),
   test: (() => {
     return 'http://192.168.4.52:9127' // 北京52服务器地址
